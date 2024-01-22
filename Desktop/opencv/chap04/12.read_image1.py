@@ -13,11 +13,11 @@ def print_matInfo(name, image):
     print("%12s: depth(%s), channels(%s) -> mat_type(%sC%d)"
           % (name, image.dtype, nchannel, mat_type,  nchannel))
 
-title1, title2 = "gray2gray", "gray2color"      # 윈도우 이름
-gray2gray  = cv2.imread(                                ) #  
-gray2color = cv2.imread(                                )# 
+title1, title2 = "gray2gray", "gray2color" # 윈도우 이름
+gray2gray  = cv2.imread("/Users/gimsumin/Desktop/opencv/chap04/images/read_gray.jpg", cv2.IMREAD_GRAYSCALE)#  
+gray2color = cv2.imread("/Users/gimsumin/Desktop/opencv/chap04/images/read_gray.jpg", cv2.IMREAD_COLOR)# 
 
-if (gray2gray is None or gray2color is None) :  # 
+if gray2gray is None or gray2color is None :  # 
     raise Exception("영상파일 읽기 에러")
 
 # 행렬 내 한 화소 값 표시

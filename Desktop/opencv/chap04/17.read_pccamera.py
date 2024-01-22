@@ -18,12 +18,12 @@ print("노출 %d" % capture.get(cv2.CAP_PROP_EXPOSURE))
 print("밝기 %d" % capture.get(cv2.CAP_PROP_BRIGHTNESS))
 
 while True:  # 무한 반복
-    
+    ret, frame = capture.read()
+    if not ret: break
+    if cv2.waitKey(30) >= 0: break
 
-
-
-
-    
+    exposure = capture.get(cv2.CAP_PROP_AUTO_EXPOSURE)
+    put_string(frame, 'EXPOS: ', (10,40), exposure)
     title = "View Frame from Camera"
     cv2.imshow(title, frame)  # 윈도우에 영상 띄우기
 capture.release()
